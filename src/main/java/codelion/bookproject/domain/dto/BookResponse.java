@@ -10,4 +10,11 @@ public class BookResponse {
     private Long id;
     private String bookName;
     private String author;
+    private String publisherName;
+
+    public BookResponse(Long id, String bookName, String author) {
+        this.id = id;
+        this.bookName = bookName;
+        this.author = author;
+    }
 }
