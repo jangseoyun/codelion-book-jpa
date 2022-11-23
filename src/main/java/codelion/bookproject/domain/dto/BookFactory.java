@@ -10,4 +10,13 @@ public class BookFactory {
                 , books.getName()
                 , books.getAuthor().getAuthorName());
     }
+
+    public static BookResponse toAllBookResponse(Books books) {
+        return new BookResponse(
+                books.getId()
+                , books.getName()
+                , books.getAuthor().getAuthorName()
+                , books.getPublisher().getPublisherName()
+        );
+    }
 }
