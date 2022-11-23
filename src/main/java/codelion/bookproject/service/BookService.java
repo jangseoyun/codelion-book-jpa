@@ -20,6 +20,7 @@ public class BookService {
 
     private final BookRepository bookRepository;
 
+    /*-------- 책 저자 포함 리스트 -----------*/
     public List<BookResponse> findBookList() {
         List<Books> joinList = bookRepository.getJoinList();
         log.info("joinList service: {}", joinList);
