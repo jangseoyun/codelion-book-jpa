@@ -1,6 +1,5 @@
 package codelion.bookproject.controller;
 
-import codelion.bookproject.domain.dto.BookResponse;
 import codelion.bookproject.service.BookService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -26,4 +25,14 @@ public class BookRestController {
                 .status(HttpStatus.OK)
                 .body(bookService.findBookList());
     }
+
+    /*-------- 책 저자 + 출판사 포함 리스트 -----------*/
+    @GetMapping("/all")
+    public ResponseEntity getAllBookList() {
+        log.info("책 출판사, 작가, 책  목록 요청 controller");
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(bookService.findBookAllList());
+    }
+
 }

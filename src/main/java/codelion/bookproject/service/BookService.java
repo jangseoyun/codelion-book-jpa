@@ -29,4 +29,13 @@ public class BookService {
                 .collect(Collectors.toList());
     }
 
+    /*-------- 책 저자 + 출판사 포함 리스트 -----------*/
+    public List<BookResponse> findBookAllList() {
+        List<Books> publisherAndAuthorJoin = bookRepository.getPublisherAndAuthorJoin();
+        log.info("publisherAndAuthorJoin service: {}", publisherAndAuthorJoin);
+        return publisherAndAuthorJoin.stream()
+                .map(books -> BookFactory.toAllBookResponse(books))
+                .collect(Collectors.toList());
+    }
+
 }
